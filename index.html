@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="background"></div>
+    <header>
+        <h1>Mi Portafolio Profesional</h1>
+        <p>Explora mis proyectos innovadores</p>
+    </header>
+    <main>
+        <section id="datos-personales">
+            <div class="card">
+                <img src="./img/foto.png" alt="Mi foto" id="foto-perfil">
+                <h2>Datos Básicos</h2>
+                <ul>
+                    <li><strong>Nombre:</strong> Tu Nombre</li>
+                    <li><strong>Edad:</strong> Tu Edad</li>
+                    <li><strong>Profesión:</strong> Tu Profesión</li>
+                    <li><strong>Email:</strong> tu@email.com</li>
+                </ul>
+            </div>
+        </section>
+        <section id="proyectos">
+            <h2>Mis Proyectos de Software</h2>
+            <div id="lista-proyectos"></div>
+            <form id="formulario-proyecto" class="card">
+                <h3>Agregar Nuevo Proyecto</h3>
+                <input type="text" id="nombre-proyecto" placeholder="Nombre del proyecto" required>
+                <textarea id="descripcion-proyecto" placeholder="Descripción del proyecto" required></textarea>
+                <input type="text" id="tecnologias-proyecto" placeholder="Tecnologías utilizadas" required>
+                <input type="file" id="imagen-proyecto" accept="image/*" required>
+                <button type="submit">Agregar Proyecto</button>
+            </form>
+        </section>
+        <section id="contenido-adicional">
+           
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
