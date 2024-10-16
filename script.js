@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(proyectos => {
             proyectos.forEach(proyecto => {
-                const elementoProyecto = crearProyecto(proyecto.nombre, proyecto.descripcion, proyecto.tecnologias, proyecto.imagen);
+                const elementoProyecto = crearProyecto(proyecto);
                 listaProyectos.appendChild(elementoProyecto);
             });
         });
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    const proyecto = crearProyecto(nombre, descripcion, tecnologias, event.target.result);
+                    const proyecto = crearProyecto(nuevoProyecto);
                     listaProyectos.appendChild(proyecto);
                     formularioProyecto.reset();
                 });
@@ -102,16 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    function crearProyecto(nombre, descripcion, tecnologias, imagenSrc) {
-        const proyecto = document.createElement('div');
-        proyecto.className = 'proyecto';
-        proyecto.innerHTML = `
-            <h3>${nombre}</h3>
-            <img src="${imagenSrc}" alt="${nombre}">
-            <p><strong>Descripción:</strong> ${descripcion}</p>
-            <p><strong>Tecnologías:</strong> ${tecnologias}</p>
+    function crearProyecto(proyecto) {
+        const elementoProyecto = document.createElement('div');
+        elementoProyecto.className = 'proyecto';
+        elementoProyecto.innerHTML = `
+            <h3>${proyecto.nombre}</h3>
+            <img src="${proyecto.imagen}" alt="${proyecto.nombre}">
+            <p><strong>Descripción:</strong> ${proyecto.descripcion}</p>
+            <p><strong>Tecnologías:</strong> ${proyecto.tecnologias}</p>
         `;
-        return proyecto;
+        return elementoProyecto;
     }
 
     // Ajustar el tamaño del renderizador cuando se redimensiona la ventana
