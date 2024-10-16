@@ -45,9 +45,14 @@ def datos_personales():
         "edad": "30",
         "profesion": "Análista en Desarrollo de Software",
         "email": "alfonsobrian7@email.com",
-        "imagen": "./img/foto.png",
+        "imagen": "/img/foto.png",  # Asegúrate de que esta ruta sea correcta
         "tecnologias": ["HTML", "CSS", "JavaScript", "Python"]
     })
+
+# Añade esta ruta para servir archivos estáticos si no la tienes ya
+@app.route('/img/<path:path>')
+def send_img(path):
+    return send_from_directory('img', path)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -41,17 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const tecnologias = data.tecnologias.join(', ');
             datosPersonales.innerHTML = `
-                <div class="card">
-                    <img src="${data.imagen}" alt="Mi foto" id="foto-perfil">
-                    <h2>Datos Básicos</h2>
-                    <ul>
-                        <li><i class="fas fa-user"></i> <strong>Nombre:</strong> ${data.nombre}</li>
-                        <li><i class="fas fa-calendar-alt"></i> <strong>Edad:</strong> ${data.edad}</li>
-                        <li><i class="fas fa-laptop-code"></i> <strong>Profesión:</strong> ${data.profesion}</li>
-                        <li><i class="fas fa-envelope"></i> <strong>Email:</strong> ${data.email}</li>
-                        <li><i class="fas fa-cogs"></i> <strong>Tecnologías:</strong> ${tecnologias}</li>
-                    </ul>
-                </div>
+                <img src="${data.imagen}" alt="Foto de perfil" id="foto-perfil">
+                <h2>Datos Básicos</h2>
+                <ul>
+                    <li><i class="fas fa-user"></i> <strong>Nombre:</strong> <span>${data.nombre}</span></li>
+                    <li><i class="fas fa-calendar-alt"></i> <strong>Edad:</strong> <span>${data.edad}</span></li>
+                    <li><i class="fas fa-laptop-code"></i> <strong>Profesión:</strong> <span>${data.profesion}</span></li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <span>${data.email}</span></li>
+                    <li><i class="fas fa-cogs"></i> <strong>Tecnologías:</strong> <span>${tecnologias}</span></li>
+                </ul>
             `;
         });
 
@@ -108,8 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
         elementoProyecto.innerHTML = `
             <h3>${proyecto.nombre}</h3>
             <img src="${proyecto.imagen}" alt="${proyecto.nombre}">
-            <p><strong>Descripción:</strong> ${proyecto.descripcion}</p>
-            <p><strong>Tecnologías:</strong> ${proyecto.tecnologias}</p>
+            <div class="proyecto-info">
+                <p><strong>Descripción:</strong> ${proyecto.descripcion}</p>
+                <p><strong>Tecnologías:</strong> ${proyecto.tecnologias}</p>
+            </div>
         `;
         return elementoProyecto;
     }

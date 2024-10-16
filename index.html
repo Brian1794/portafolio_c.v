@@ -16,32 +16,25 @@
         <p>Explora mis proyectos innovadores</p>
     </header>
     <main>
-        <section id="datos-personales">
-            <div class="card">
-                <img src="./img/foto.png" alt="Mi foto" id="foto-perfil">
-                <h2>Datos Básicos</h2>
-                <ul>
-                    <li><strong>Nombre:</strong>Brian Gerardo Alfonso Rodriguez</li>
-                    <li><strong>Edad:</strong> 30</li>
-                    <li><strong>Profesión:</strong>Análista enDesarrollo de Software</li>
-                    <li><strong>Email:</strong> alfonsobrian7@email.com</li>
-                </ul>
-            </div>
+        <section id="datos-personales" class="section">
+            <h2>Datos Básicos</h2>
+            <ul>
+                <!-- Los datos se llenarán con JavaScript -->
+            </ul>
         </section>
-        <section id="proyectos">
+        <section id="proyectos" class="section">
             <h2>Mis Proyectos de Software</h2>
             <div id="lista-proyectos"></div>
-            <form id="formulario-proyecto" class="card">
-                <h3>Agregar Nuevo Proyecto</h3>
+        </section>
+        <section id="formulario-proyecto" class="section">
+            <h2>Agregar Nuevo Proyecto</h2>
+            <form>
                 <input type="text" id="nombre-proyecto" placeholder="Nombre del proyecto" required>
                 <textarea id="descripcion-proyecto" placeholder="Descripción del proyecto" required></textarea>
                 <input type="text" id="tecnologias-proyecto" placeholder="Tecnologías utilizadas" required>
                 <input type="file" id="imagen-proyecto" accept="image/*" required>
                 <button type="submit">Agregar Proyecto</button>
             </form>
-        </section>
-        <section id="contenido-adicional">
-           
         </section>
     </main>
     <script src="script.js"></script>
